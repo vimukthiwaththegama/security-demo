@@ -33,7 +33,8 @@ public class SecurityConfig
                 httpSecurity.csrf( AbstractHttpConfigurer::disable ).
                             authorizeHttpRequests( request -> request.anyRequest().authenticated() ).
                             httpBasic( Customizer.withDefaults() ).
-                            sessionManagement( session -> session.sessionCreationPolicy( SessionCreationPolicy.STATELESS ) ).
+                            sessionManagement
+                                    ( session -> session.sessionCreationPolicy( SessionCreationPolicy.STATELESS ) ).
                             build();
     }
 
